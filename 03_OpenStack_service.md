@@ -2,7 +2,7 @@
 
 ### 1. 오픈스택 설정 확인
 
-![](https://user-images.githubusercontent.com/42603919/71606758-2354f000-2bb7-11ea-99e9-2cabffc1fa4e.PNG)
+![](./img/3.PNG)
 
 ![](https://user-images.githubusercontent.com/42603919/71606702-b6d9f100-2bb6-11ea-8c06-699bf98b9314.PNG)
 
@@ -82,4 +82,84 @@
 
 11 : AWS의 EBS와 동일
 
-8 : 
+8 : 공인 IP, (Fixed IP : 사설 IP), AWS의 EIP개념과 비슷
+
+
+
+
+
+#### 3.1 네트워크 생성
+
+- Tenant Private Network 생성 (가상 네트워크 2개)
+
+ 두 네트워크를 연결하기 위해서 **`라우터`**를 이용한다.
+
+VPC : 가상 네트워크
+
+>  A 클래스 사설 IP : 10
+>
+> B 클래스 사설 IP : 172.16 ~ 172.31
+>
+> C 클래스 사설 IP : 192.168.0 ~ 255
+
+![](./img/server.PNG)
+
+![](./img/asd.jpg)
+
+##### int1 (private) <- subint1
+
+- 192.168.0.0/24, Gateway(Router)
+
+- 192.168.0.254
+
+- DNS : 10.0.0.2
+
+- DHCP
+
+- Fixed IP (사설 ip)
+
+  
+
+##### web
+
+- 192.168.0.1~253
+
+
+
+##### ext1 (subext1)
+
+- 외부 통신 (windows와 controller(CentOS))  -> xshell, ssh, web browser(windows)를 통해서 web에 접근이 가능한 상태로 만들어 준다.
+
+- 네트워크 주소 정해짐 : 10.0.0.0/24
+- Gateway : 10.0.0.2
+- DNS : 10.0.0.2
+- Floating IP (공인 ip)
+
+- DHCP(X) -> pool(210~220) : 10.0.0.201,10.0.0.220 (콤마 앞뒤로 스페이스 x)
+
+
+
+##### Router
+
+- 각 네트워크를 연결 (ext1 & int1)
+
+  
+
+##### 외부네트워크
+
+- 물리망과 연결이 필요 (br-ex와 ext1(Floating ip) 연결)
+
+  
+
+##### 게이트웨이 설정
+
+- 외부네트워크와 Router를 연결
+
+  
+
+##### 내부 인터페이스
+
+- 내부 인터페이스 추가 (Router와 int1(Fixed ip) 연결)
+
+
+
