@@ -96,12 +96,12 @@ Changes to be committed:
 ``` shell
 HPE@DESKTOP-STUDENT1 MINGW64 ~/TIL (master)
 $ git config --global user.email
-dlrjsapdlf622
-git config --global user.email dlrjsapdlf622@naver.com
+아이디
+git config --global user.email 이메일 주소
 
 HPE@DESKTOP-STUDENT1 MINGW64 ~/TIL (master)
 $ git config --global user.name
-Younggwon
+이름
 ```
 
 
@@ -173,14 +173,14 @@ $ git commit -m "ADD README.md"
 
 HPE@DESKTOP-STUDENT1 MINGW64 ~/TIL (master)
 $ git log
-commit cbd2cc32418336095f7c68a8fe15f24d7a22ec6b (HEAD -> master)
-Author: Younggwon <dlrjsapdlf622git config --global user.email dlrjsapdlf622@naver.comgit config --global user.email dlrjsapdlf622>
+commit ~~~ (HEAD -> master)
+Author: Younggwon <dlrjsapdlf622git config --global user.email 이메일 주소git config --global user.email 아이디>
 Date:   Fri Dec 27 14:51:43 2019 +0900
 
     ADD README.md
 
-commit 9ea0e87709de62490feeed8ca5592bd2d4923165
-Author: Younggwon <dlrjsapdlf622git config --global user.email dlrjsapdlf622@naver.comgit config --global user.email dlrjsapdlf622>
+commit ~~~
+Author: Younggwon <dlrjsapdlf622git config --global user.email 이메일 주소git config --global user.email 아이디>
 Date:   Fri Dec 27 14:41:35 2019 +0900
 
     first commit
@@ -205,8 +205,8 @@ $ git checkout 9ea0e87
 
 HPE@DESKTOP-STUDENT1 MINGW64 ~/TIL ((9ea0e87...))
 $ git log
-commit 9ea0e87709de62490feeed8ca5592bd2d4923165 (HEAD)
-Author: Younggwon <dlrjsapdlf622git config --global user.email dlrjsapdlf622@naver.comgit config --global user.email dlrjsapdlf622>
+commit ~~~ (HEAD)
+Author: 이름 <아이디git config --global user.email 이메일 주소git config --global user.email 아이디>
 Date:   Fri Dec 27 14:41:35 2019 +0900
 
     first commit
@@ -236,7 +236,7 @@ $ ls
 
 ``` shell
 HPE@DESKTOP-STUDENT1 MINGW64 ~/TIL (master)
-$ git remote add origin https://github.com/younggwon1/TIL.git
+$ git remote add origin github주소
 
 HPE@DESKTOP-STUDENT1 MINGW64 ~/TIL (master)
 $ git remote
@@ -244,8 +244,8 @@ origin
 
 HPE@DESKTOP-STUDENT1 MINGW64 ~/TIL (master)
 $ git remote -v
-origin  https://github.com/younggwon1/TIL.git (fetch)
-origin  https://github.com/younggwon1/TIL.git (push)
+origin  github주소 (fetch)
+origin  github주소 (push)
 ```
 
 ### 2. 코드 올리기
@@ -261,7 +261,7 @@ Compressing objects: 100% (4/4), done.
 Writing objects: 100% (6/6), 2.24 KiB | 573.00 KiB/s, done.
 Total 6 (delta 1), reused 0 (delta 0)
 remote: Resolving deltas: 100% (1/1), done.
-To https://github.com/younggwon1/TIL.git
+To github주소
  * [new branch]      master -> master
 ```
 

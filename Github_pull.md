@@ -14,7 +14,7 @@ HPE@DESKTOP-STUDENT1 MINGW64 ~/house
 
 ``` shell
 HPE@DESKTOP-STUDENT1 MINGW64 ~/house
-$ git clone https://github.com/younggwon1/TIL.git (처음만 git clone 그 후에는 git pull)
+$ git clone github 주소 (처음만 git clone 그 후에는 git pull)
 Cloning into 'TIL'...
 remote: Enumerating objects: 10, done.
 remote: Counting objects: 100% (10/10), done.
