@@ -22,9 +22,9 @@
 
 - **Hypervisor** : 호스트 컴퓨터에서 다수의 운영체제를 동시에 실행하기 위한 논리적 플랫폼을 말한다.
 
-  ![](C:\Users\HPE\Desktop\4.PNG)
+  ![](https://user-images.githubusercontent.com/42603919/71605937-44661280-2bb0-11ea-863f-ca8997a3981c.PNG)
 
-![](C:\Users\HPE\Desktop\5.PNG)
+![](https://user-images.githubusercontent.com/42603919/71605943-53e55b80-2bb0-11ea-816c-2b542c9103fc.PNG)
 
 ### 1.2 오픈스택이란?
 
@@ -32,17 +32,17 @@
 >
 > IaaS를 제공하기 위해 데이터센터의 인프라를 제어하는 클라우드 오퍼레이팅 시스템(소프트웨어)라고 할 수 있다.
 
-![](C:\Users\HPE\Desktop\1.PNG)
+![](https://user-images.githubusercontent.com/42603919/71605950-5fd11d80-2bb0-11ea-9043-94acc372c41b.PNG)
 
 위의 이미지와 같이 common H/W(Server, Network, Storage)와 S/W기반에서 오픈스택이라는 제어도구를 활용하여 가상의 인프라 리소스를 IaaS 형태로 제공하는 역할을 담당한다. 즉, 오픈스택은 Public Cloud와 Private Cloud 환경을 구축할 수 있도록 해주는 오픈소스 소프트웨어로 **`SDDC(software defined data center)`** 의 기반 플랫폼이라고도 정의할 수 있다.
 
-![](C:\Users\HPE\Desktop\2.PNG)
+![](https://user-images.githubusercontent.com/42603919/71605952-61024a80-2bb0-11ea-98a6-7cb324f6dd0d.PNG)
 
 가상화 업무는 고객의 서비스 요구에 따라 각 요소별 전문가들이 역할을 수행하여 구성되는 반면, Cloud의 경우  Self-Provisioning 또는 단일화된 창구를 통해 서비스 인프라가 구성된다.
 
 즉, 모두 가상화 기술을 이용하여 H/W 자원의 효율성을 비슷하지만 리소스 제공의 시간이 단축되므로 업무 효율성을 증가시켜 준다. 이처럼 Cloud의 기반이 되는 것이 오픈스택이라 할 수 있다.
 
-![](C:\Users\HPE\Desktop\3.PNG)
+![](https://user-images.githubusercontent.com/42603919/71605958-6cee0c80-2bb0-11ea-9fde-7ed83481f950.PNG)
 
 ### storage 유형
 
@@ -77,15 +77,15 @@
 
 - **all-in-one**
 
-  ![](C:\Users\HPE\Desktop\6.PNG)
+  ![](https://user-images.githubusercontent.com/42603919/71605945-55168880-2bb0-11ea-88e9-31731cf60451.PNG)
 
 - **two node**
 
-  ![](C:\Users\HPE\Desktop\7.PNG)
+  ![](https://user-images.githubusercontent.com/42603919/71605946-55af1f00-2bb0-11ea-8096-f02b771eee56.PNG)
 
 - **three node**
 
-  ![](C:\Users\HPE\Desktop\8.PNG)
+  ![](https://user-images.githubusercontent.com/42603919/71605947-56e04c00-2bb0-11ea-8424-31b0f48e0a67.PNG)
 
   
 
