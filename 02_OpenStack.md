@@ -42,7 +42,19 @@
 
 즉, 모두 가상화 기술을 이용하여 H/W 자원의 효율성을 비슷하지만 리소스 제공의 시간이 단축되므로 업무 효율성을 증가시켜 준다. 이처럼 Cloud의 기반이 되는 것이 오픈스택이라 할 수 있다.
 
+- Nova : 컴퓨터
+- Swift : 객체 저장소
+-  Glance : 이미지 관리
+-  Keystone : 인증관리
+-  Horizon : 인터페이스
+-  Neutron : 네트워킹
+-  Cinder : 블록저장소
+-  Ceilometer : 모니터링과 계량기
+-  Heat : Orchestration
+
 ![](https://user-images.githubusercontent.com/42603919/71605958-6cee0c80-2bb0-11ea-9fde-7ed83481f950.PNG)
+
+[오픈스택 서비스 추가 내용](https://arisu1000.tistory.com/27767)
 
 ### storage 유형
 
@@ -53,7 +65,7 @@
 
 [오픈스택 참고](https://docs.openstack.org/train/)
 
-
+[오픈스택 참고1](https://galid1.tistory.com/207?category=764058)
 
 ### 가상화 유형
 
