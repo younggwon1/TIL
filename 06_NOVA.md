@@ -58,6 +58,21 @@ C군 : docker, baremetal ...
 
 [Compute 설치](https://docs.openstack.org/nova/rocky/install/compute-install-rdo.html)
 
+
+
+**compute1에서 실행**
+
+``` shell
+# systemctl enable libvirtd.service openstack-nova-compute.service
+# systemctl start libvirtd.service openstack-nova-compute.service
+```
+
+
+
+> **`이때 compute1에서 실행되지 않는다면 controller에서 다음과 같은 과정을 한다.`**
+
+
+
 **방화벽 설정(해제, controller에서)**
 
 ```shell
@@ -70,7 +85,7 @@ vi /etc/sysconfig/iptables
 systemctl reload iptables
 ```
 
-
+**`설정을 한 후 compute1에서 자동으로 다음으로 넘어가면 성공, 하지만 넘어가지 않는다면 다음 과정을 수행`**
 
 **연결 시작하기(compute에서)**
 
