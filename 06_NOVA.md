@@ -58,6 +58,63 @@ C군 : docker, baremetal ...
 
 [Compute 설치](https://docs.openstack.org/nova/rocky/install/compute-install-rdo.html)
 
+**방화벽 설정(해제, controller에서)**
+
+```shell
+vi /etc/sysconfig/iptables
+13번 아래에 추가
+-A INPUT -s 10.0.0.101/32 -p tcp -m multiport --dports 5671,5672 -m comment --comment "001 amqp incoming amqp_10.0.0.101" -j ACCEPT
+-A INPUT -s 10.0.0.101/32 -p tcp -m multiport --dports 5671,5672 -j ACCEPT
+-A INPUT -s 10.0.0.100/32 -p tcp -m multiport --dports 5671,5672 -j ACCEPT
+
+systemctl reload iptables
+```
+
+
+
+**연결 시작하기(compute에서)**
+
+```shell
+#systemctl stop openstack-nova-compute
+#systemctl start openstack-nova-compute
+```
+
+
+
 성공(all in one에서 compute 노드를 붙임, controller&compute1)
 
+##### 연결되었는지 확인하기
+
+`controller`에서 확인
+
 ![3](https://user-images.githubusercontent.com/42603919/71713432-0f2a2080-2e4d-11ea-8862-18d8f0cef0fc.PNG)
+
+`compute1`에서 확인
+
+``` shell
+[root@compute1 ~]# yum install -y openstack-utils
+```
+
+``` shell
+[root@compute1 ~]# openstack-status
+```
+
+![1](https://user-images.githubusercontent.com/42603919/71788878-e763d400-3069-11ea-8b38-c3b8ab5be423.PNG)
+
+``` shell
+[root@compute1 ~]# systemctl status libvirtd
+```
+
+
+
+![2](https://user-images.githubusercontent.com/42603919/71788880-e763d400-3069-11ea-882b-fe96b096d69d.PNG)
+
+
+
+##### openstack 홈페이지에 접속(admin 계정(관리자))
+
+**`관리 -> compute -> 하이퍼바이저`**에 들어가서 compute1과 controller가 있는지 확인
+
+![hypervisor](https://user-images.githubusercontent.com/42603919/71788766-bcc54b80-3068-11ea-8ab8-a0aadcf66691.PNG)
+
+![hypervisor1](https://user-images.githubusercontent.com/42603919/71788779-d8c8ed00-3068-11ea-8f7e-e25238697881.PNG)
