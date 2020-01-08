@@ -37,13 +37,23 @@ sending build context to Docker daemon 97.5MB
 
 
 ```powershell
-$ docker container run helloworld:latest # 실체화 시킴
+$ docker container run helloworld:latest # 실체화 시킴 (새 이미지를 이용하여 새 컨테이너 실행)
 # run = create + start
 # docker stop 을 한 후 docker start를 해야한다. (docker run을 하게되면 create + start가 된다.)
 Hello, World~
 ```
 
+---
 
+#### 이미지 다운 방법
+
+```
+이미지 다운은 pull or build를 이용하여 다운 받는다.
+
+build는 local에 생성, build를 하려면 Dockerfile이 있어야한다.
+```
+
+---
 
 ### 로컬 도커 환경 구축하기
 
@@ -135,7 +145,7 @@ PS C:\Users\HPE> docker ps
 ```powershell
 PS C:\Users\HPE> docker run -p 8080 gihyodocker/echo:latest
 
-PS C:\Users\HPE> docker run -p 9000:8080 gihyodocker/echo:lates # 포트 9000번으로 접속하면 8080 주소로 연결
+PS C:\Users\HPE> docker run -p 9000:8080 gihyodocker/echo:lates # 포트 9000번으로 접속하면 컨테이너 8080 연결
 ```
 
 
@@ -153,6 +163,8 @@ PS C:\Users\HPE> docker ps -a # 종료된 컨테이너까지 보여주는 것
 PS C:\Users\HPE\docker\day01\simpleweb> docker container prune # 모든 컨테이너 삭제
 
 PS C:\Users\HPE> docker rm 컨테이너 id # 컨테이너 삭제
+
+PS C:\Users\HPE> docker rmi 이미지 id # 이미지 삭제
 
 PS C:\Users\HPE> docker ps -q # 컨테이너 id를 가지고옴
 
@@ -378,8 +390,9 @@ RUN npm install에서 오류 발생(root에서 run하기 때문)
 
 
 
-```
+```powershell
 PS C:\Users\HPE\docker\day01\simpleweb> docker build -t dlrjsapdlf622/simpleweb:latest .
+# build => 배포
 ```
 
 ![2](https://user-images.githubusercontent.com/42603919/71875631-1d877d80-3168-11ea-935e-12ccaba9b71b.PNG)
@@ -390,13 +403,17 @@ PS C:\Users\HPE\docker\day01\simpleweb> docker build -t dlrjsapdlf622/simpleweb:
 
 
 
-```
+```powershell
 PS C:\Users\HPE\docker\day01\simpleweb> docker run -d -p 8080:8080 dlrjsapdlf622/simpleweb:latest
 ```
 
 
 
-```
+### 컨테이너에서 직접 수정 (적극 권장)
+
+
+
+```powershell
 PS C:\Users\HPE\docker\day01\simpleweb> docker exec -it container id or name sh
 
 /home/node # vi index.js -> vi edit 수정
@@ -404,7 +421,7 @@ PS C:\Users\HPE\docker\day01\simpleweb> docker exec -it container id or name sh
 
 ![4](https://user-images.githubusercontent.com/42603919/71875634-1d877d80-3168-11ea-8c22-3c80235ccd80.PNG)
 
-```
+```powershell
 PS C:\Users\HPE\docker\day01\simpleweb> docker restart container id or name
 ```
 
@@ -414,7 +431,7 @@ PS C:\Users\HPE\docker\day01\simpleweb> docker restart container id or name
 
 다른 컨테이너 생성
 
-```
+```powershell
 PS C:\Users\HPE\docker\day01\simpleweb> docker run -d -p 9090:8080 dlrjsapdlf622/simpleweb:latest
 ```
 
@@ -461,4 +478,6 @@ owners.
 
 Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 ```
+
+
 
