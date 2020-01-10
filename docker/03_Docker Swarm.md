@@ -8,7 +8,7 @@
 
 
 
-**dind 설치**
+**`dind` 설치**
 
 ```powershell
 docker pull docker:19.03.5-dind
