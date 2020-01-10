@@ -154,24 +154,35 @@ id *   docker-desktop      Ready               Active              Leader       
 
 **swarm 삭제(탈출)**
 
-```
+```powershell
 PS C:\Users\HPE\docker\day03\swarm> docker swarm leave --force
 ```
 
+---
+
+---
+
+#### 하지만 클러스터 관리는 manager가 해야한다. 따라서 다음과 같이 설정을 해야한다.
+
+```powershell
+PS C:\Users\HPE\docker\day03\swarm> docker-compose up
+```
 
 
-#### 클러스터 관리는 manager가 해야한다.따라서 다음과 같이 설정을 해야한다.
 
 **manager에서 swarm 설정**
 
-```
+```powershell
 PS C:\Users\HPE\docker\day03\swarm> docker exec -it manager sh
+/ # docker swarm init
 docker swarm join --token ~~~~
 ```
 
+
+
 **각각의 worker에 연결**(참여)
 
-```
+```powershell
 PS C:\Users\HPE\docker\day03\swarm> docker exec -it work01 sh
 / # docker swarm join --token ~~~
 PS C:\Users\HPE\docker\day03\swarm> docker exec -it work02 sh
@@ -184,7 +195,7 @@ PS C:\Users\HPE\docker\day03\swarm> docker exec -it work03 sh
 
 **manager에서 확인**
 
-```
+```powershell
 PS C:\Users\HPE\docker\day03\swarm> docker exec -it manager docker node ls
 ```
 
