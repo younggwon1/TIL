@@ -267,8 +267,7 @@ services:
 
 
 ```
-PS C:\Users\HPE\docker\day03\swarm> docker exec -it manager docker stack deploy -c /stack/visualizer.yml
- visualizer
+PS C:\Users\HPE\docker\day03\swarm> docker exec -it manager docker stack deploy -c /stack/visualizer.yml visualizer
 ```
 
 ![캡처](https://user-images.githubusercontent.com/42603919/72125250-3d5ab380-33ab-11ea-84da-387715b9de47.PNG)
