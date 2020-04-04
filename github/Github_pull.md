@@ -10,7 +10,7 @@ $ cd house
 HPE@DESKTOP-STUDENT1 MINGW64 ~/house
 ```
 
-
+#### 설정하기
 
 ``` shell
 HPE@DESKTOP-STUDENT1 MINGW64 ~/house
