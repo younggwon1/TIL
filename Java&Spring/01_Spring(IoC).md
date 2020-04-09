@@ -10,6 +10,10 @@
 
 
 
+![캡처](https://user-images.githubusercontent.com/42603919/78860434-2a6c8380-7a6d-11ea-8fd0-c7f87486f226.PNG)
+
+
+
 ```
 IoC 컨테이너는 다른 용어로 Bean Factory, Application Context라고도 불림.
 스프링의 IoC 컨테이너는 일반적으로 Application Context를 말함.
